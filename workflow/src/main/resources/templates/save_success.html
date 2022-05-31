@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>Job Entered Successfully</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <style>
+    	
+       body{
+	     background-color:cadetblue;
+      }
+      
+		.container{
+			margin-top:320px;
+		}
+		a{
+			
+			color:ghostwhite;
+		}
+    	
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h3>You saved your job  successfully!</h3>
+        <div>
+        <i class="fa fa-check" style="font-size:160px;color:green"></i>
+        </div>
+        <a th:href="@{/users}"><h3>Click here to view users</h3></a>
+    </div>
+     
+</body>
+</html>

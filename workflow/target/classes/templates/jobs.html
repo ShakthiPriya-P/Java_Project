@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>List Jobs</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style> 
+       body{
+	            background-color:cadetblue;
+         }
+       header{   
+	             padding:20px;
+	             background-color:black;
+	             color:white;
+	             display:flex;
+	            
+	             
+	             
+       }
+       span{
+	         font-size:30px;
+	         margin-left:700px;
+	    }
+	    h3{
+			color:black;
+		}
+	   
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <form th:action="@{/logout}" method="post">
+           <header>
+           	<span>
+           	
+                Welcome <b>[[${#request.userPrincipal.principal.Name}]]</b>
+           	</span>
+           	<input type="submit" value="Sign Out" style="margin-left:600px;" />
+            </header>
+            
+        </form>
+    </div>
+    <div class="container text-center">
+    	<div>
+        <h1>List of Jobs</h1>
+    </div>
+     
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>JobId</th>
+                    <th>Job</th>
+                    <th>Accept Job</th>
+                    <th>Reject Job</th>
+                    <th>Accept Count</th>
+                    <th>Reject Count</th>
+                    <th>Status</th>
+                    <th> Assign</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="job: ${listJobs}">
+                    <td th:text="${job.jobId}">Job ID</td>
+                    <td th:text="${job.menu}">Job </td>
+                    <form  th:object="${job}">
+                    <td> <a th:href="@{'/accept/'+${job.jobId}}" class="btn btn-success">Accept</a></td>
+                    <td> <a th:href="@{'/reject/'+${job.jobId}}" class="btn btn-danger">Reject</a></td>
+                    </form>
+
+                    <td th:text="${job.acceptCount}"</td>
+                    <td th:text="${job.rejectCount}"</td>
+                    <td th:text="${job.status}"</td>
+                    <td th:text="${job.assign}"</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+     <a th:href="@{/menu}"><i class="fa fa-fw fa-user"></i><h3>Menu</h3></a>
+    </div>
+    
+    
+</div>
+</body>
+</html>

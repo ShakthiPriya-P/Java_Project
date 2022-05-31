@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Enter Job</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <style> 
+       body{
+	            background-color:cadetblue;
+         }
+        </style>
+</head>
+<body>
+   
+ 
+        
+       
+       
+       <div class="container text-center">
+        <div>
+            <h1>Enter your job</h1>
+        </div>
+        <form th:action="@{/process_save}" th:object="${job}" method="post" style="max-width: 600px; margin: 0 auto;">
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-4 col-form-label"></label>
+                <div class="col-8">
+                    <textarea  th:field="*{menu}" class="form-control"
+                            required rows="20" cols="50"/>
+                </div>
+                <div>
+                	<label class="col-4 col-form-label"  style="margin-top: 30px;"><h3>Assign Job to:</h3> </label>
+                	 <input type="text" th:field="*{assign}" class="form-control" required />
+                </div>
+            </div>
+       
+            
+             <div>
+                <button type="submit" class="btn btn-primary">Post</button>
+            </div>
+            
+        </div>
+        </form>
+    </div>
+     
+  
+     
+</body>
+</html>

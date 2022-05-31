@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+    	body{
+			background-color:cadetblue;
+		}
+		i{
+			font-size:160px;
+			color:green;
+		}
+		.container{
+			width:400px;
+			margin-top:320px;
+			border:1px solid black;
+			border-radius:15px;
+			background-color:ghostwhite;
+		
+		}
+		h1{
+			color:darkcyan;
+			font-size:50px;
+		}
+		h3{
+			margin-top:30px;
+			color:black;
+			text-decoration:none;
+			
+		}
+		
+    </style>
+</head>
+<body>
+	
+	<div class="container text-center">
+        <h1>Menu</h1>
+        <a th:href="@{/users}"><h3>List of Users</h3></a>
+        <a th:href="@{/enter_job}"><h3>Post Job</h3></a>
+        <a th:href="@{/jobs}"><h3>View jobs</h3></a>
+    </div>
+	
+    
+     
+</body>
+</html>
